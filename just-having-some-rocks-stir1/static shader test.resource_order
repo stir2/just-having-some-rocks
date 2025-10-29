@@ -1,8 +1,0 @@
-{
-  "FolderOrderSettings":[],
-  "ResourceOrderSettings":[
-    {"name":"Wall","order":1,"path":"objects/Wall/Wall.yy",},
-    {"name":"sh_checkerboard","order":1,"path":"shaders/sh_checkerboard/sh_checkerboard.yy",},
-    {"name":"sh_purple_waves","order":2,"path":"shaders/sh_purple_waves/sh_purple_waves.yy",},
-  ],
-}
