@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"sh_gaussian_v",
-  "name":"sh_gaussian_v",
+  "%Name":"sh_base_effect",
+  "name":"sh_base_effect",
   "parent":{
     "name":"Shaders",
     "path":"folders/Shaders.yy",

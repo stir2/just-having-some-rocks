@@ -1,0 +1,1 @@
+global.curr_room = 0;
