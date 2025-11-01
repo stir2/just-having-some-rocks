@@ -1,11 +1,16 @@
 //
 // static_effect.fsh
 //
+
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 uniform float t;
 uniform vec2 cam_pos;
+uniform vec2 display_size;
+uniform float flashlight_radius;
+
+int particle_update_time = 8;
 
 float hash12(vec2 p){
 	// Hash a 2D coordinate into [0, 1)
@@ -20,7 +25,7 @@ float random(vec2 st) {
 }
 
 bool check_color(vec3 rgb, vec3 target){
-	return distance(rgb, target / 255.0) < 0.05;
+	return distance(rgb, target / 255.0) < 0.01;
 }
 
 float parametric_blend(float n)
@@ -37,25 +42,62 @@ void main() {
 	vec3 new_rgb = rgb;
 	
 	float pixel_size = 4.0;
-	vec2 pixel_pos = floor((gl_FragCoord.xy - cam_pos) / pixel_size) * pixel_size;
+	vec2 st = floor((gl_FragCoord.xy) / pixel_size) * pixel_size;
+	vec2 st2 = floor((gl_FragCoord.xy - cam_pos) / pixel_size) * pixel_size;
 	
 	//Collectible Animation
 	if(check_color(rgb, vec3(0, 0, 170))){
 		float time_step = 4.0;
 		float t2 = floor(t / time_step) * time_step;
 		
-		float r = random(pixel_pos + t2) * 0.25;
-		float g = random(pixel_pos + t2) * 0.25;
-		float b = random(pixel_pos + t2) * 1.0;
+		float r = random(st2 + t2) * 0.25;
+		float g = random(st2 + t2) * 0.25;
+		float b = random(st2 + t2) * 1.0;
+		new_rgb = vec3(r, g, b);
+	} else if(check_color(rgb, vec3(0, 0, 180))){
+		float time_step = 4.0;
+		float t2 = floor(t / time_step) * time_step;
+		
+		float r = random(st2 + t2) * 0.5;
+		float g = random(st2 + t2) * 1.0;
+		float b = random(st2 + t2) * 1.0;
 		new_rgb = vec3(r, g, b);
 	} else if(check_color(rgb, vec3(255, 255, 255))){
 		float time_step = 4.0;
 		float t2 = floor(t / time_step) * time_step;
 		
-		float r = random(pixel_pos + t2) * 1.5;
-		float g = random(pixel_pos + t2) * 1.5;
-		float b = random(pixel_pos + t2) * 1.5;
+		float r = random(st2 + t2) * 1.5;
+		float g = random(st2 + t2) * 1.5;
+		float b = random(st2 + t2) * 1.5;
 		new_rgb = vec3(r, g, b);
+	} else if(check_color(rgb, vec3(50, 50, 50))){
+		float time_step = 4.0;
+		float t2 = floor(t / time_step) * time_step;
+		
+		float r = random(st2 + t2) * 0.75;
+		float g = random(st2 + t2) * 0.75;
+		float b = random(st2 + t2) * 0.75;
+		new_rgb = vec3(r, g, b);
+	} else if(check_color(rgb, vec3(250, 100, 170))){
+		float time_step = 2.0;
+		float t2 = floor(t / time_step) * time_step;
+		
+		if(step(0.75, random(st2 + t2 + 1.0)) == 1.0){
+			float r = random(st2 + t2) * 1.2;
+			float g = random(st2 + t2) * 1.2;
+			float b = random(st2 + t2) * 1.2;
+			new_rgb = vec3(r, g, b);
+		} else {
+			new_rgb = vec3(0.0, 0.0, 0.0);
+			a = 0.0;
+		}
+
+	}
+	
+	vec2 room_center = display_size / 2.0;
+	float dist = distance(st, room_center);
+	if(dist > flashlight_radius){
+		new_rgb = rgb;
 	}
 	
     gl_FragColor = vec4(new_rgb, a);

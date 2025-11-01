@@ -1,18 +1,19 @@
 //
 // static_effect.fsh
 //
+#define MAX_PARTICLES 50
+
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-
 uniform float t;
 
 // Set ring variables
 uniform bool ring_active;
 uniform float ring_radius;
 uniform vec2 ring_pos;
+uniform float flashlight_radius;
 float ring_update_speed = 1.0;
 float ring_width = 200.0;
-
 uniform vec2 display_size;
 
 float hash12(vec2 p){
@@ -36,7 +37,9 @@ float parametric_blend(float n)
 
 void main() {
 	float pixel_size = 4.0;
-    vec4 baseColor = texture2D(gm_BaseTexture, v_vTexcoord);
+	vec2 st = floor(gl_FragCoord.xy / pixel_size) * pixel_size;
+	vec2 TexCoord = st / display_size;
+    vec4 baseColor = texture2D(gm_BaseTexture, TexCoord);
 	
     vec3 rgb = baseColor.rgb;
 	float a = baseColor.a;
@@ -46,17 +49,13 @@ void main() {
 	bool point_in_ring = abs(distance(gl_FragCoord.xy, ring_pos) - ring_radius) < ring_width / 2.0;
 	bool point_in_object = (rgb.r + rgb.g + rgb.b > 2.97);
     
-	
 	vec2 room_center = display_size / 2.0;
-
-    vec2 st = floor(gl_FragCoord.xy / pixel_size) * pixel_size;
 
 	// Luminance-based color seed
     float colorSeed = dot(rgb, vec3(0.299, 0.587, 0.114));
 	
 	if(ring_active && point_in_object && point_in_ring){
 	    colorSeed += random(vec2(floor(t / ring_update_speed) * ring_update_speed));
-		
 	}
 	
 	float r = random(st + vec2(colorSeed, 1.0));
@@ -68,16 +67,14 @@ void main() {
 	float dist = distance(st, room_center);
 	
 	// Create center visibility area
-	if(dist < 200.0){
-		new_rgb = mix(rgb, vec3(r, g, b), pow(dist / 200.0, 5.0));
-		new_a = mix(a, 1.0, pow(dist / 200.0, 5.0));
+	if(dist < flashlight_radius){
+		new_rgb = mix(rgb, vec3(r, g, b), pow(dist / 200.0, 8.0));
+		new_a = mix(a, 1.0, pow(dist / 200.0, 8.0));
 	} else {
 		new_rgb = vec3(r, g, b);
 		new_a = 1.0;
 	}
 	
-	
-	float luminance = dot(new_rgb, vec3(1, 1, 1));
 	float mult = preserve_black;
 	
 	new_rgb *= mult;

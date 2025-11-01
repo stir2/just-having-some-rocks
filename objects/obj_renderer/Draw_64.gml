@@ -16,8 +16,10 @@ surface_set_target(surf_base);
 
 shader_set(sh_base_effect);
 
-shader_set_uniform_f(shader_get_uniform(sh_base_effect, "t"), t);
+shader_set_uniform_f(shader_get_uniform(sh_base_effect, "t"), global.t);
 shader_set_uniform_f(shader_get_uniform(sh_base_effect, "cam_pos"), cam_x, cam_y);
+shader_set_uniform_f(shader_get_uniform(sh_base_effect, "display_size"), disp_w, disp_h);
+shader_set_uniform_f(shader_get_uniform(sh_base_effect, "flashlight_radius"), flashlight_radius);
 
 draw_surface_stretched(application_surface, 0, 0, disp_w, disp_h);
 //shader_reset();
@@ -27,18 +29,17 @@ surface_set_target(surf_static);
 
 shader_set(sh_static_effect);
 
-shader_set_uniform_f(shader_get_uniform(sh_static_effect, "t"), t);
+shader_set_uniform_f(shader_get_uniform(sh_static_effect, "t"), global.t);
 
-// Pass in  ring uniforms
+// Pass in ring uniforms
 shader_set_uniform_f(shader_get_uniform(sh_static_effect, "ring_active"), ring_active);
 var ring_frag_radius = ring_radius * (disp_h / cam_h);
 var ring_frag_x = ring_pos_x * (disp_w / cam_w);
 var ring_frag_y = ring_pos_y * (disp_h / cam_h);
-
 shader_set_uniform_f(shader_get_uniform(sh_static_effect, "ring_radius"), ring_frag_radius);
 shader_set_uniform_f(shader_get_uniform(sh_static_effect, "ring_pos"), ring_frag_x, ring_frag_y);
 shader_set_uniform_f(shader_get_uniform(sh_static_effect, "display_size"), disp_w, disp_h);
-
+shader_set_uniform_f(shader_get_uniform(sh_static_effect, "flashlight_radius"), flashlight_radius);
 
 draw_surface_stretched(surf_base, 0, 0, disp_w, disp_h);
 shader_reset();

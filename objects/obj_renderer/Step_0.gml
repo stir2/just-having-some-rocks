@@ -1,5 +1,5 @@
 if(ring_active){
-	ring_radius += 3;
+	ring_radius += 5;
 	ring_cooldown = 0;
 	
 	if(ring_radius > ring_max){
@@ -10,5 +10,3 @@ if(ring_active){
 } else if(ring_cooldown > 0){
 	ring_cooldown--;
 }
-
-t++;
