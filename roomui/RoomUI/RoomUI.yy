@@ -1,0 +1,21 @@
+{
+  "$GMRoomUI":"",
+  "%Name":"RoomUI",
+  "children":[
+    {"$GMRUILayer":"v1","%Name":"UIwhiteoutLayer","alignItems":2,"children":[
+        {"$GMRFlexPanel":"","%Name":"FlexPanel","alignItems":2,"children":[
+            {"$GMRInstance":"v2","%Name":"inst_7EF5F32B","colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7EF5F32B","objectId":{"name":"oUIwhiteout","path":"objects/oUIwhiteout/oUIwhiteout.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":42.7,"scaleY":24.0,"x":0.0,"y":0.0,},
+          ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"FlexPanel","nodeColour":4282939122,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"UIwhiteoutLayer","nodeColour":4289262152,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+  ],
+  "locked":false,
+  "name":"RoomUI",
+  "parent":{
+    "name":"JustHavingSomeRocks",
+    "path":"JustHavingSomeRocks.yyp",
+  },
+  "resourceType":"GMRoomUI",
+  "resourceVersion":"2.0",
+  "viewspaceChildren":[],
+  "visible":true,
+}

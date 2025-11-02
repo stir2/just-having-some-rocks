@@ -1,4 +1,5 @@
 function player_jump(){
+	
 	var currently_jumping = false
 	var jump_keys = [vk_space, vk_up, ord("W")]
 	
@@ -10,7 +11,6 @@ function player_jump(){
 	// if we're not currently jumping, we don't care
 	if (!currently_jumping) return;
 	
-	show_debug_message("jumping")
 	// power of initial leap
 	var jump_force = -8;
 	
@@ -19,7 +19,6 @@ function player_jump(){
 	
 	// if we are on the ground
 	if (place_meeting(x, y+3, oTile)) {
-		show_debug_message("jump from ground")
 		global.y_vel = jump_force;
 	}
 	

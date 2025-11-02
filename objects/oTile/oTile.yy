@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTile",
-    "path":"sprites/sTile/sTile.yy",
+    "name":"sWhiteSquare",
+    "path":"sprites/sWhiteSquare/sWhiteSquare.yy",
   },
   "spriteMaskId":null,
   "tags":[

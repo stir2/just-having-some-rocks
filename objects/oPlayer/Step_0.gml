@@ -1,6 +1,8 @@
 // an array of all objects that the player can collide with.
 var things_that_are_collidable = [oTile]
 
+if (global.stage_finished) {return}
+
 ///////////
 // MOVING X
 ///////////
@@ -28,7 +30,6 @@ if (global.moving_right || global.moving_left) {
 
 // calculate the size of step in y direc
 var step_size_y = global.y_vel;
-show_debug_message("velocity: {0}, acceleration: {1}", global.y_vel, global.y_acc)
 
 // if there is nothing stopping the player's fall
 if (!place_meeting(x, y + step_size_y, things_that_are_collidable)) {

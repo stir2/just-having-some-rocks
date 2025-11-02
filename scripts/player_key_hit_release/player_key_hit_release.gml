@@ -3,8 +3,10 @@ global.moving_left = false;
 global.moving_right = false;
 global.y_vel = 0;
 global.y_acc = 0.5;
+global.stage_finished = false;
 
 function player_key_hit_release() {
+	
 	// arrays of keys that equal left/right
 	var left_keys = [vk_left, ord("A")]
 	var right_keys = [vk_right, ord("D")]

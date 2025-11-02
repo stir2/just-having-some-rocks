@@ -1,2 +1,2 @@
-draw_as_inverse()
-//draw_self()
+//draw_as_inverse()
+draw_self()
