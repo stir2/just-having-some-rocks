@@ -4,9 +4,14 @@
   "children":[
     {"$GMRUILayer":"v1","%Name":"UIwhiteoutLayer","alignItems":2,"children":[
         {"$GMRFlexPanel":"","%Name":"FlexPanel","alignItems":2,"children":[
-            {"$GMRInstance":"v2","%Name":"inst_7EF5F32B","colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7EF5F32B","objectId":{"name":"oUIwhiteout","path":"objects/oUIwhiteout/oUIwhiteout.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":42.7,"scaleY":24.0,"x":0.0,"y":0.0,},
+            {"$GMRInstance":"v4","%Name":"inst_7EF5F32B","colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7EF5F32B","objectId":{"name":"oUIwhiteout","path":"objects/oUIwhiteout/oUIwhiteout.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":42.7,"scaleY":24.0,"x":0.0,"y":0.0,},
           ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"FlexPanel","nodeColour":4282939122,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
       ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"UIwhiteoutLayer","nodeColour":4289262152,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+    {"$GMRUILayer":"v1","%Name":"stageCompleteButtons","alignItems":2,"children":[
+        {"$GMRFlexPanel":"","%Name":"Buttons","alignItems":2,"children":[
+            {"$GMRInstance":"v4","%Name":"inst_7A326270","colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7A326270","objectId":{"name":"oRetryButton","path":"objects/oRetryButton/oRetryButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.828125,"scaleY":1.0,"x":50.0,"y":471.0,},
+          ],"flexDirection":0,"height":{"unit":1,"value":100.0,},"justifyContent":1,"name":"Buttons","nodeColour":4287623752,"paddingBottom":{"unit":1,"value":166.0,},"paddingTop":{"unit":1,"value":512.0,},"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":1,"value":100.0,},},
+      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"stageCompleteButtons","nodeColour":4294068417,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
   ],
   "locked":false,
   "name":"RoomUI",

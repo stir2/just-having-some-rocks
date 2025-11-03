@@ -1,14 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oStageFinish",
+  "%Name":"oRetryButton",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":76,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oStageFinish",
+  "name":"oRetryButton",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -33,12 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sDiamond",
-    "path":"sprites/sDiamond/sDiamond.yy",
+    "name":"sUIdarkBackground_center",
+    "path":"sprites/sUIdarkBackground_center/sUIdarkBackground_center.yy",
   },
   "spriteMaskId":null,
-  "tags":[
-    "collidable",
-  ],
   "visible":true,
 }

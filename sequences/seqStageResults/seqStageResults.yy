@@ -10,7 +10,13 @@
   "backdropYOffset":0.0,
   "events":{
     "$KeyframeStore<MessageEventKeyframe>":"",
-    "Keyframes":[],
+    "Keyframes":[
+      {"$Keyframe<MessageEventKeyframe>":"","Channels":{
+          "0":{"$MessageEventKeyframe":"","Events":[
+              "background_fade_start",
+            ],"resourceType":"MessageEventKeyframe","resourceVersion":"2.0",},
+        },"Disabled":false,"id":"96575bac-8d3b-4d1d-ad2c-291d34a4dcda","IsCreationKey":false,"Key":23.0,"Length":1.0,"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
+    ],
     "resourceType":"KeyframeStore<MessageEventKeyframe>",
     "resourceVersion":"2.0",
   },
@@ -83,7 +89,7 @@
             ],"resourceType":"KeyframeStore<RealKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"rotation","resourceType":"GMRealTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[],"traits":0,},
         {"$GMTextTrack":"","%Name":"STAGE NAME","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":1,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"STAGE NAME","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":1,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"STAGE NAME","Wrap":true,},
                 },"Disabled":false,"id":"7eec2cbe-a22b-4099-8e54-8953ab5eed7d","IsCreationKey":false,"Key":0.0,"Length":60.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"STAGE NAME","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMRealTrack":"","%Name":"characterSpacing","builtinName":21,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<RealKeyframe>":"","Keyframes":[
@@ -193,7 +199,7 @@
             ],"resourceType":"KeyframeStore<RealKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"rotation","resourceType":"GMRealTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[],"traits":0,},
         {"$GMTextTrack":"","%Name":"run timer","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":2,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"0:00.000\r\n","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":2,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"0:00.000\r\n","Wrap":true,},
                 },"Disabled":false,"id":"6e5e4d38-2b38-4ff7-a10f-e4b5ae471611","IsCreationKey":false,"Key":0.0,"Length":60.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"run timer","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMRealTrack":"","%Name":"characterSpacing","builtinName":21,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<RealKeyframe>":"","Keyframes":[
@@ -233,7 +239,7 @@
           ],"traits":0,},
         {"$GMTextTrack":"","%Name":"TIME","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":0,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"TIME:","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":0,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"TIME:","Wrap":true,},
                 },"Disabled":false,"id":"c2c55629-49e6-4e04-8678-bbc0f7848888","IsCreationKey":false,"Key":0.0,"Length":60.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"TIME","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMColourTrack":"","%Name":"blend_multiply","builtinName":10,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<ColourKeyframe>":"","Keyframes":[
@@ -351,7 +357,7 @@
             ],"resourceType":"KeyframeStore<RealKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"rotation","resourceType":"GMRealTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[],"traits":0,},
         {"$GMTextTrack":"","%Name":"death counter","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":2,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"0","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":2,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"0","Wrap":true,},
                 },"Disabled":false,"id":"6d2abaa7-3db9-4967-8721-d8ac5b77797f","IsCreationKey":false,"Key":0.0,"Length":61.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"death counter","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMRealTrack":"","%Name":"characterSpacing","builtinName":21,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<RealKeyframe>":"","Keyframes":[
@@ -391,7 +397,7 @@
           ],"traits":0,},
         {"$GMTextTrack":"","%Name":"DEATHS","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":0,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"DEATHS:\r\n","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":0,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"DEATHS:\r\n","Wrap":true,},
                 },"Disabled":false,"id":"d148080c-5489-4c06-9868-f813649bacde","IsCreationKey":false,"Key":0.0,"Length":61.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"DEATHS","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMColourTrack":"","%Name":"blend_multiply","builtinName":10,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<ColourKeyframe>":"","Keyframes":[
@@ -509,7 +515,7 @@
             ],"resourceType":"KeyframeStore<RealKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"rotation","resourceType":"GMRealTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[],"traits":0,},
         {"$GMTextTrack":"","%Name":"secrets found","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":2,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"0/0","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":2,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"0/0","Wrap":true,},
                 },"Disabled":false,"id":"1bf77250-07e3-4854-953d-7e0061e8005b","IsCreationKey":false,"Key":0.0,"Length":61.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"secrets found","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMRealTrack":"","%Name":"characterSpacing","builtinName":21,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<RealKeyframe>":"","Keyframes":[
@@ -549,7 +555,7 @@
           ],"traits":0,},
         {"$GMTextTrack":"","%Name":"SECRETS:","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":0,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"SECRETS:","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":0,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"SECRETS:","Wrap":true,},
                 },"Disabled":false,"id":"509880de-5808-413a-96e6-802095a08070","IsCreationKey":false,"Key":0.0,"Length":60.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"SECRETS:","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMColourTrack":"","%Name":"blend_multiply","builtinName":10,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<ColourKeyframe>":"","Keyframes":[
@@ -643,7 +649,7 @@
                             {"th0":0.0,"th1":0.086666666,"tv0":0.0,"tv1":0.0,"x":0.0,"y":-160.00002,},
                             {"th0":-0.086666666,"th1":0.033333004,"tv0":0.0,"tv1":0.0,"x":0.43333334,"y":-160.00002,},
                             {"th0":-0.033333004,"th1":0.11333366,"tv0":0.0,"tv1":0.0,"x":0.59999835,"y":-160.00002,},
-                            {"th0":-0.11333366,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.1666666,"y":-160.0,},
+                            {"th0":-0.11333366,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-160.0,},
                           ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
                       ],"function":2,"name":"Position","resourceType":"GMAnimCurve","resourceVersion":"2.0",},"RealValue":0.0,"resourceType":"RealKeyframe","resourceVersion":"2.0",},
                   "1":{"$RealKeyframe":"","AnimCurveId":null,"EmbeddedAnimCurve":{"$GMAnimCurve":"","%Name":"Position","channels":[
@@ -661,7 +667,7 @@
                             {"th0":0.0,"th1":0.086666666,"tv0":0.0,"tv1":0.0,"x":0.0,"y":-160.00002,},
                             {"th0":-0.086666666,"th1":0.033333004,"tv0":0.0,"tv1":0.0,"x":0.43333334,"y":-160.00002,},
                             {"th0":-0.033333004,"th1":0.11333366,"tv0":0.0,"tv1":0.0,"x":0.59999835,"y":-160.00002,},
-                            {"th0":-0.11333366,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.1666666,"y":-160.0,},
+                            {"th0":-0.11333366,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-160.0,},
                           ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
                       ],"function":2,"name":"Position","resourceType":"GMAnimCurve","resourceVersion":"2.0",},"RealValue":0.0,"resourceType":"RealKeyframe","resourceVersion":"2.0",},
                 },"Disabled":false,"id":"43ec491c-483d-48a8-a11d-264bca4d1846","IsCreationKey":false,"Key":0.0,"Length":60.0,"resourceType":"Keyframe<RealKeyframe>","resourceVersion":"2.0","Stretch":false,},
@@ -673,7 +679,7 @@
             ],"resourceType":"KeyframeStore<RealKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"rotation","resourceType":"GMRealTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[],"traits":0,},
         {"$GMTextTrack":"","%Name":"Rank","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<AssetTextKeyframe>":"","Keyframes":[
               {"$Keyframe<AssetTextKeyframe>":"","Channels":{
-                  "0":{"$AssetTextKeyframe":"","Alignment":257,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"UItitleFont","path":"fonts/UItitleFont/UItitleFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"S","Wrap":true,},
+                  "0":{"$AssetTextKeyframe":"v1","Alignment":257,"EnableEffects":false,"EnableGlow":false,"EnableOutline":false,"EnableShadow":false,"Id":{"name":"font_PixelFont","path":"fonts/font_PixelFont/font_PixelFont.yy",},"resourceType":"AssetTextKeyframe","resourceVersion":"2.0","Text":"S","Wrap":true,},
                 },"Disabled":false,"id":"488084d8-c56a-46af-99f7-79ee074887bb","IsCreationKey":false,"Key":0.0,"Length":61.0,"resourceType":"Keyframe<AssetTextKeyframe>","resourceVersion":"2.0","Stretch":false,},
             ],"resourceType":"KeyframeStore<AssetTextKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"Rank","resourceType":"GMTextTrack","resourceVersion":"2.0","trackColour":4294103368,"tracks":[
             {"$GMRealTrack":"","%Name":"characterSpacing","builtinName":21,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<RealKeyframe>":"","Keyframes":[
