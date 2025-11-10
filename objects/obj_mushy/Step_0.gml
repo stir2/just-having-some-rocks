@@ -29,6 +29,7 @@ if(global.freezeframe <= 0){
 	
 	if(diving && global.t - latest_input_dive_t == dive_freezeframe){
 		vel_x += latest_input_x * vel_dive_x;
+		dive_dir = latest_input_x;
 		vel_y += vel_dive_y;
 	}
 
@@ -41,7 +42,7 @@ if(global.freezeframe <= 0){
 			latest_groundpound_contact = global.t;
 			groundpounding = false;
 			global.freezeframe = groundpound_contact_freezeframe;
-			obj_renderer.create_particles(10, x + sprite_width, y + sprite_height * 1.5, 8, 30, true, (vel_x / -4) - 0.5, (vel_x / -4) + 0.5, -0.25, -0.75);
+			obj_renderer.create_particles(10, x + sprite_width / 1.5, y + sprite_height * 1.5, 8, 30, true, (vel_x / -4) - 0.5, (vel_x / -4) + 0.5, -0.25, -0.75);
 			activate_ring();
 		}
 		
@@ -67,7 +68,7 @@ if(global.freezeframe <= 0){
 		latest_input_dive_t = global.t;
 		latest_dive_t = global.t;
 		global.freezeframe = dive_freezeframe;
-	} else if(jumping && input_y == 1 && global.t - latest_jump_t < jump_duration){
+	} else if(jumping && !groundpounding && input_y == 1 && global.t - latest_jump_t < jump_duration){
 		vel_y += sqrt(jump_height) * jump_mult / jump_duration;
 	} else {
 		// jumping = false;
@@ -81,13 +82,12 @@ if(global.freezeframe <= 0){
 		}
 		latest_jump_t = global.t;
 		jumping = true;
-		show_debug_message("create particles");
 	}
-
-	var step = 100;
+    
+	var step = 200;
 	for(var i = 0; i < abs(vel_y) * step; i++){
 		var vel_sign = -1 * sign(vel_y) / step;
-		if(place_meeting(x, y + vel_sign, obj_wall)){
+		if(place_meeting(x, y + vel_sign * 2, obj_wall)){
 			on_ground = (vel_y < 0);
 			vel_y = 0;
 			break;
@@ -101,7 +101,7 @@ if(global.freezeframe <= 0){
 
 	for(var i = 0; i < abs(vel_x) * step; i++){
 		var vel_sign = sign(vel_x);
-		if(place_meeting(x + vel_sign / step, y, obj_wall)){
+		if(place_meeting(x + vel_sign / step * 2, y, obj_wall)){
 			curr_wall_contact_duration++;
 			if(input_x != vel_sign || curr_wall_contact_duration > wall_momentum_break_time){
 				vel_x = 0;			
@@ -113,6 +113,10 @@ if(global.freezeframe <= 0){
 		x += vel_sign / step;
 	}
 	vel_x *= on_ground ? decel_air : decel_air;
+}
+
+if(abs(vel_x) < vel_x_stopping_bound){
+	vel_x = 0;
 }
 
 //camera_set_view_pos(view_camera[0], x, y);
@@ -145,11 +149,23 @@ if(latest_input_right_t > latest_input_left_t){
 	latest_input_x = 0;
 }
 
+if(groundpounding){
+	image_index = 3;
+} else if(diving && global.t - latest_input_dive_t >= dive_freezeframe){
+	image_index = 5 + (dive_dir - 1) / 2;
+} else if(jumping && vel_y >= -0.2){
+	image_index = 0;
+} else if(input_x != 0){
+	image_index = (global.t / 8) % 3;
+} else {
+	image_index = 1;
+}
+
 function activate_ring(){
 	obj_renderer.ring_active = true;
-	obj_renderer.ring_radius = 50;
-	obj_renderer.ring_pos_x = x + (sprite_get_width(sprite_index) / 2);
-	obj_renderer.ring_pos_y = y + (sprite_get_height(sprite_index) / 2);
+	obj_renderer.ring_radius = 40;
+	obj_renderer.ring_pos_x = camera_get_view_width(view_camera[0]) / 2; //x + (sprite_get_width(sprite_index) / 2);
+	obj_renderer.ring_pos_y = camera_get_view_width(view_camera[0]) / 2; //y + (sprite_get_height(sprite_index) / 2);
 }
 
 function unstuck(strength){

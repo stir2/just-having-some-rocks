@@ -10,6 +10,14 @@ uniform vec2 cam_pos;
 uniform vec2 display_size;
 uniform float flashlight_radius;
 
+/*vec3 colorKeys[5];
+
+colorKeys[0] = vec3(0, 0, 170);
+colorKeys[1] = vec3(0, 0, 180);
+colorKeys[2] = vec3(255, 255, 255);
+colorKeys[3] = vec3(50, 50, 50);
+colorKeys[4] = vec3(250, 100, 170);*/
+
 int particle_update_time = 8;
 
 float hash12(vec2 p){
@@ -45,7 +53,7 @@ void main() {
 	vec2 st = floor((gl_FragCoord.xy) / pixel_size) * pixel_size;
 	vec2 st2 = floor((gl_FragCoord.xy - cam_pos) / pixel_size) * pixel_size;
 	
-	//Collectible Animation
+	// Collectible noise
 	if(check_color(rgb, vec3(0, 0, 170))){
 		float time_step = 4.0;
 		float t2 = floor(t / time_step) * time_step;
@@ -54,6 +62,7 @@ void main() {
 		float g = random(st2 + t2) * 0.25;
 		float b = random(st2 + t2) * 1.0;
 		new_rgb = vec3(r, g, b);
+	// Player dash noise
 	} else if(check_color(rgb, vec3(0, 0, 180))){
 		float time_step = 4.0;
 		float t2 = floor(t / time_step) * time_step;
@@ -62,6 +71,7 @@ void main() {
 		float g = random(st2 + t2) * 1.0;
 		float b = random(st2 + t2) * 1.0;
 		new_rgb = vec3(r, g, b);
+	// White object / wall noise
 	} else if(check_color(rgb, vec3(255, 255, 255))){
 		float time_step = 4.0;
 		float t2 = floor(t / time_step) * time_step;
@@ -70,6 +80,7 @@ void main() {
 		float g = random(st2 + t2) * 1.5;
 		float b = random(st2 + t2) * 1.5;
 		new_rgb = vec3(r, g, b);
+	// Player groundpound noise
 	} else if(check_color(rgb, vec3(50, 50, 50))){
 		float time_step = 4.0;
 		float t2 = floor(t / time_step) * time_step;

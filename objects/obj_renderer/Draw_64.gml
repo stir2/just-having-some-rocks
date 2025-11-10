@@ -1,3 +1,6 @@
+if(debug_mode){
+    return;
+}
 // Dimensions
 var disp_w = display_get_gui_width();
 var disp_h = display_get_gui_height();

@@ -1,4 +1,5 @@
 vel_x = 0;
+vel_x_stopping_bound = 0.1;
 vel_y = 0;
 decel_gnd = 0.4;
 decel_air = 0.75;
@@ -6,6 +7,7 @@ accel_x = 0.5;
 grav = -0.20;
 wall_momentum_break_time = 4;
 curr_wall_contact_duration = 0;
+
 
 jump_base = 2;
 jump_height = 5;
@@ -20,7 +22,7 @@ groundpound_buffer = 8;
 vel_groundpound = -5;
 jump_groundpound_cooldown = 6;
 groundpound_jump_buffer = 10;
-groundpound_jump_boost = 1.05;
+groundpound_jump_boost = 1.10;
 groundpound_contact_freezeframe = 4;
 groundpounding = false;
 groundpound_screenshake_strength = 1;
@@ -50,7 +52,10 @@ latest_input_dive_t = -1000;
 latest_dive_t = -1000;
 latest_groundpound_contact = -1000;
 latest_dive_contact = -1000;
+dive_dir = 0;
 
 on_ground = false;
 color = make_color_rgb(255, 255, 255);
+
 depth = -2;
+mask_index = spr_mushy_mask2;
