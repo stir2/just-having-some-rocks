@@ -3,3 +3,7 @@ if(global.freezeframe > 0){
 }
 
 global.t++;
+
+if(keyboard_check_pressed(ord("T"))){
+	global.debug = !global.debug;
+}

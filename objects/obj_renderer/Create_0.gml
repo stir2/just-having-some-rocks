@@ -12,7 +12,7 @@ ring_pos_y = 0;
 ring_radius = 0;
 ring_cooldown = 0;
 ring_max = 200;
-flashlight_radius = 200;
+flashlight_radius = 300;
 
 particles = [];
 

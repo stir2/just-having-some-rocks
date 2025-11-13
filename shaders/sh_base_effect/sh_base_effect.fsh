@@ -52,6 +52,8 @@ void main() {
 	float pixel_size = 4.0;
 	vec2 st = floor((gl_FragCoord.xy) / pixel_size) * pixel_size;
 	vec2 st2 = floor((gl_FragCoord.xy - cam_pos) / pixel_size) * pixel_size;
+	bool shader_visible = false;
+	float shader_visible_radius = 1000.0;
 	
 	// Collectible noise
 	if(check_color(rgb, vec3(0, 0, 170))){
@@ -89,6 +91,7 @@ void main() {
 		float g = random(st2 + t2) * 0.75;
 		float b = random(st2 + t2) * 0.75;
 		new_rgb = vec3(r, g, b);
+	// Player base color
 	} else if(check_color(rgb, vec3(250, 100, 170))){
 		float time_step = 2.0;
 		float t2 = floor(t / time_step) * time_step;
@@ -102,12 +105,31 @@ void main() {
 			new_rgb = vec3(0.0, 0.0, 0.0);
 			a = 0.0;
 		}
-
+	// Spike color
+	} else if(check_color(rgb, vec3(150, 0, 0))) {
+		float time_step = 1.0;
+		float t2 = floor(t / time_step) * time_step;
+		
+		float r = random(st2 + t2) * 1.0;
+		float g = random(st2 + t2) * 0.25;
+		float b = random(st2 + t2) * 0.25;
+		new_rgb = vec3(r, g, b);
+		shader_visible = true;
+		shader_visible_radius = 700.0;
+	// Breakable wall color
+	} else if(check_color(rgb, vec3(240, 240, 240))) {
+		float time_step = 2.0;
+		float t2 = floor(t / time_step) * time_step;
+		
+		float r = random(st2 + t2) * 0.9;
+		float g = random(st2 + t2) * 0.9;
+		float b = random(st2 + t2) * 0.9;
+		new_rgb = vec3(r, g, b);
 	}
 	
 	vec2 room_center = display_size / 2.0;
 	float dist = distance(st, room_center);
-	if(dist > flashlight_radius){
+	if(dist > flashlight_radius && !(shader_visible && dist < shader_visible_radius)){
 		new_rgb = rgb;
 	}
 	

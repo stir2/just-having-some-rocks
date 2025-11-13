@@ -13,7 +13,7 @@ uniform float ring_radius;
 uniform vec2 ring_pos;
 uniform float flashlight_radius;
 float ring_update_speed = 1.0;
-float ring_width = 200.0;
+float ring_width = 300.0;
 uniform vec2 display_size;
 
 float hash12(vec2 p){
@@ -68,7 +68,7 @@ void main() {
 	
 	// Create center visibility area
 	if(dist < flashlight_radius){
-		new_rgb = mix(rgb, vec3(r, g, b), pow(dist / 200.0, 8.0));
+		new_rgb = mix(rgb, vec3(r, g, b), pow(dist / (flashlight_radius - 20.0), 8.0));
 		new_a = mix(a, 1.0, pow(dist / 200.0, 8.0));
 	} else {
 		new_rgb = vec3(r, g, b);

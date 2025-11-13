@@ -59,3 +59,4 @@ color = make_color_rgb(255, 255, 255);
 
 depth = -2;
 mask_index = spr_mushy_mask2;
+spawnpoint = [104, 56];

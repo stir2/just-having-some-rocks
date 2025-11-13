@@ -1,4 +1,4 @@
-if(debug_mode){
+if(global.debug){
     return;
 }
 // Dimensions

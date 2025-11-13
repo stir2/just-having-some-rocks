@@ -8,3 +8,6 @@ global.controls = {
 	up: [vk_up, ord("W")],
 	down: [vk_down, ord("S"), ord("X")]
 }
+global.debug = debug_mode;
+
+audio_play_sound(snd_world1_loop, 0, true);

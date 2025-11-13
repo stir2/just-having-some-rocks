@@ -119,6 +119,18 @@ if(abs(vel_x) < vel_x_stopping_bound){
 	vel_x = 0;
 }
 
+if(y > room_height || place_meeting(x, y, obj_kill)){
+	x = spawnpoint[0];
+	y = spawnpoint[1];
+	vel_x = 0;
+	vel_y = 0;
+	jumping = true;
+	groundpounding = false;
+	diving = false;
+	latest_groundpound_contact = global.t;
+	global.freezeframe = 15;
+}
+
 //camera_set_view_pos(view_camera[0], x, y);
 var view_pos_x =  x - (camera_get_view_width(view_camera[0]) - sprite_width) / 2;
 var view_pos_y = y - (camera_get_view_height(view_camera[0]) - sprite_height) / 2;

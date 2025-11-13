@@ -6,7 +6,7 @@ if(groundpounding){
 	color = make_color_rgb(255, 255, 255);
 }
 
-if(!debug_mode){
+if(!global.debug){
     draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, color, 1);
     
 } else {
@@ -21,5 +21,5 @@ if(!debug_mode){
     draw_sprite_ext(mask_index, image_index, x, y + _outline_thickness, image_xscale, image_yscale, image_angle, _outline_color, image_alpha);
 
     draw_sprite_ext(mask_index, image_index, x, y, image_xscale, image_yscale, image_angle, _bg_color, image_alpha);
-    draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, color, 0.4);
+    draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, color, 0.4);
 }
